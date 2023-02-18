@@ -1,0 +1,15 @@
+<div class="galeria-container">
+  <h2>Galeria de Imagens</h2>
+  <div class="galeria-imagem-container">
+    <img [src]="imagens[fotoAtual]" alt="Imagem {{ fotoAtual + 1 }}">
+    <p>Foto {{ fotoAtual + 1 }} de {{ imagens.length }} fotos</p>
+  </div>
+  <div class="galeria-botoes-container">
+    <button class="btn btn-primary" (click)="irParaPrimeiraFoto()" [disabled]="fotoAtual === 0">Primeira</button>
+    <button class="btn btn-primary" (click)="irParaFotoAnterior()" [disabled]="fotoAtual === 0">Anterior</button>
+    <button class="btn btn-primary" (click)="irParaProximaFoto()"
+      [disabled]="fotoAtual === imagens.length - 1">Próxima</button>
+    <button class="btn btn-primary" (click)="irParaUltimaFoto()"
+      [disabled]="fotoAtual === imagens.length - 1">Última</button>
+  </div>
+</div>
